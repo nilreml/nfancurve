@@ -4,7 +4,8 @@ After=graphical-session.target
 Requires=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/nfancurve -c /etc/nfancurve.conf
+ExecStartPre=/bin/sleep 5
+ExecStart=/bin/bash /home/merlin/git/github/nfancurve/temp.sh -c /home/merlin/git/github/nfancurve/config
 KillSignal=SIGINT
 
 [Install]
