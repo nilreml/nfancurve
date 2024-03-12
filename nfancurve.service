@@ -1,12 +1,15 @@
 [Unit]
 Description=Nfancurve service
-After=graphical-session.target
-Requires=graphical-session.target
+After=default.target
+#After=graphical-session.target
+#Requires=graphical-session.target
 
 [Service]
 ExecStartPre=/bin/sleep 5
 ExecStart=/bin/bash /home/merlin/git/github/nfancurve/temp.sh -c /home/merlin/git/github/nfancurve/config
 KillSignal=SIGINT
+#Restart=always
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=default.target
+#WantedBy=graphical-session.target
